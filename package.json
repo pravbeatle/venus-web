@@ -1,0 +1,45 @@
+{
+  "name": "venus-web",
+  "version": "0.1.0",
+  "main": "index.js",
+  "engines": {
+    "node": "7.8.0",
+    "npm": "4.2.0"
+  },
+  "scripts": {
+    "clean": "rm -rf build",
+    "start-dev": "babel-node src/index.js",
+    "start": "npm run build && npm run serve",
+    "lint": "rm eslint_output.txt && eslint src --fix > eslint_output.txt",
+    "build": "npm run clean && babel src -d build",
+    "serve": "node build/index.js"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pravbeatle/venus-web.git"
+  },
+  "author": "praveen selvaraj",
+  "license": "MIT",
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0",
+    "babel-cli": "^6.24.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-google": "^0.7.1",
+    "eslint-plugin-react": "^7.0.1"
+  }
+}
