@@ -1,51 +1,18 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { ChatInput } from '../components';
-import {publishKey, subscribeKey, secretKey} from '../config';
 import {connect} from 'react-redux';
 import {addMessage, setCurrentUserID, addHistory} from '../actions';
-import PubNub from 'pubnub';
 
-class App extends Component {
+class App extends React.Component {
 	sendMessage = (message) => {
-		this.PUBNUB.publish({
-			channel: 'ReactChat',
-			message: message,
-		});
-	}
-
-	fetchHistory = () => {
-		const {props} = this;
-		this.PUBNUB.history({
-			channel: 'ReactChat',
-			count: 15,
-			start: props.lastMessageTimestamp,
-			callback: (data) => {
-				props.addHistory(data[0], data[1]);
-			},
-		});
-	}
-
-	componentDidMount() {
-		const userID = Math.round(Math.random() * 1000000);
-		this.props.setCurrentUserID(userID);
-		this.PUBNUB = PubNub.init({
-			publish_key: publishKey,
-			subscribe_key: subscribeKey,
-			ssl: (location.protocol.toLowerCase() === 'https:'),
-			secret_key: secretKey,
-		});
-		this.PUBNUB.subscribe({
-			channel: 'ReactChat',
-			message: this.props.addMessage,
-		});
-		this.fetchHistory();
+		console.log(message);
 	}
 
 	render() {
-		const {props, sendMessage, fetchHistory} = this;
+		const {props} = this;
 		return(
 			<div>
-				<ChatInput userID={props.userID} sendMessage={sendMessage} />
+				<ChatInput userID={props.userID} sendMessage={this.sendMessage} />
 			</div>
 		);
 	}

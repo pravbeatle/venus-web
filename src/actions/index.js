@@ -1,7 +1,7 @@
 import * as actionTypes from './actionTypes';
-import * as chat from './chat';
+import * as chatActions from './chat';
 
 export default {
   actionTypes,
-  chat,
+  chatActions,
 };

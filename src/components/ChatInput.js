@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-export default class ChatInput extends Component {
-	
+export default class ChatInput extends React.Component {
+
 	componentDidMount() {
 		this.refs.textMessage.focus();
 	}

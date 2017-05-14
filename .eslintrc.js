@@ -1,4 +1,5 @@
 module.exports = {
+  "parser": "babel-eslint",
   "extends": "google",
   "extends": "eslint:recommended",
   "env": {
@@ -24,5 +25,8 @@ module.exports = {
     "no-console": 1,
     "no-underscore-dangle": 0,
     "no-param-reassign": 0,
+    "no-mixed-spaces-and-tabs": 0,
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
   },
 };
