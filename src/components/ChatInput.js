@@ -1,11 +1,7 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 
 export default class ChatInput extends Component {
-	static propTypes = {
-		userID: PropTypes.number.isRequired,
-		sendMessage: PropTypes.func.isRequired,
-	};
-
+	
 	componentDidMount() {
 		this.refs.textMessage.focus();
 	}

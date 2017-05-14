@@ -1,21 +1,11 @@
-import React, {Component, PropTypes} from 'react';
-import ChatInput from '../components/ChatInput';
-import ChatHistory from '../components/ChatHistory';
-import {publishKey, subscribeKey, secretKey} from '../constants/pubnub.js';
+import React, {Component} from 'react';
+import { ChatInput } from '../components';
+import {publishKey, subscribeKey, secretKey} from '../config';
 import {connect} from 'react-redux';
-import {addMessage, setCurrentUserID, addHistory} from '../actions/chat';
+import {addMessage, setCurrentUserID, addHistory} from '../actions';
 import PubNub from 'pubnub';
 
 class App extends Component {
-	static propTypes = {
-		history: PropTypes.array,
-		userID: PropTypes.number,
-		addMessage: PropTypes.func,
-		setCurrentUserID: PropTypes.func,
-		addHistory: PropTypes.func,
-		lastMessageTimestamp: PropTypes.string,
-	};
-
 	sendMessage = (message) => {
 		this.PUBNUB.publish({
 			channel: 'ReactChat',
@@ -55,7 +45,6 @@ class App extends Component {
 		const {props, sendMessage, fetchHistory} = this;
 		return(
 			<div>
-				<ChatHistory history={props.history} fetchHistory={fetchHistory} />
 				<ChatInput userID={props.userID} sendMessage={sendMessage} />
 			</div>
 		);

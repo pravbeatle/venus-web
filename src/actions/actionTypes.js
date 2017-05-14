@@ -1,4 +1,3 @@
-
 // message actions
 export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const SET_CURRENT_USERID = 'SET_CURRENT_USERID';

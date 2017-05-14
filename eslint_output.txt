@@ -1,12 +1,12 @@
 
-/Users/praveens/Desktop/learning/apps/venus-web/src/components/ChatHistory.js
-  5:22  error  Parsing error: Unexpected token =
-
 /Users/praveens/Desktop/learning/apps/venus-web/src/components/ChatInput.js
-  4:19  error  Parsing error: Unexpected token =
+  9:11  error  Parsing error: Unexpected token =
 
 /Users/praveens/Desktop/learning/apps/venus-web/src/containers/App.js
-  10:19  error  Parsing error: Unexpected token =
+  9:14  error  Parsing error: Unexpected token =
+
+/Users/praveens/Desktop/learning/apps/venus-web/src/containers/index.js
+  3:8  error  Parsing error: Unexpected token deault
 
 ✖ 3 problems (3 errors, 0 warnings)
 
