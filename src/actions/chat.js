@@ -4,21 +4,21 @@ import {
   ADD_HISTORY,
 } from './actionTypes';
 
-export function setCurrentUserID(userID) {
+export const setCurrentUserID = (userID) => {
 	return {
 		type: SET_CURRENT_USERID,
 		data: userID,
 	};
 }
 
-export function addMessage(message) {
+export const addMessage = (message) => {
 	return {
 		type: ADD_MESSAGE,
 		data: message,
 	};
 }
 
-export function addHistory(messages, timestamp) {
+export const addHistory = (messages, timestamp) => {
 	return {
 		type: ADD_HISTORY,
 		data: {

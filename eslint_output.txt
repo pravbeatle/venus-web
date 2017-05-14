@@ -2,5 +2,8 @@
 /Users/praveens/Desktop/learning/apps/venus-web/src/containers/App.js
   8:3  warning  Unexpected console statement  no-console
 
-✖ 1 problem (0 errors, 1 warning)
+/Users/praveens/Desktop/learning/apps/venus-web/src/server.js
+  18:3  warning  Unexpected console statement  no-console
+
+✖ 2 problems (0 errors, 2 warnings)
 
