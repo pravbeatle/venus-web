@@ -1,6 +1,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
@@ -61,6 +62,7 @@ module.exports = {
     new AssetsPlugin({
       filename: 'build/assets.json'
     }),
+    new HtmlWebpackPlugin(),
     // new CopyWebpackPlugin([{
     //   from: './src/images',
     //   to: './images'

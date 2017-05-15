@@ -8,24 +8,12 @@ export default class ChatInput extends React.Component {
 
 	onSubmit = (e) => {
 		e.preventDefault();
-		const message = this.refs.textMessage.value;
-		if(message.length === 0) {
-			return;
-		}
-		const messageObj = {
-			who: this.props.userID,
-			what: message,
-			when: new Date().valueOf(),
-		};
-		this.props.sendMessage(messageObj);
-		// clear input and set focus
-		this.refs.textMessage.value = '';
-		this.refs.textMessage.focus();
 	}
 
 	render() {
-		const {props, onSubmit} = this;
-		const imageUrl = '//robohash.org/' + props.userID + '?set=set2&bgset=bg2&size=70x70';
+		const {onSubmit} = this;
+		const randomString = Math.random().toString(36).substring(2);
+		const imageUrl = '//robohash.org/' + randomString + '?set=set2&bgset=bg2&size=70x70';
 		return(
 			<footer className="teal">
 			  <form className="container" onSubmit={onSubmit}>
@@ -35,7 +23,7 @@ export default class ChatInput extends React.Component {
 			        <input ref="textMessage" type="text" placeholder="your message" />
 			        <span className="chip left">
 			          <img src={imageUrl} alt={imageUrl} />
-			          <span>Anonymous robot #{props.userID}</span>
+								<span>Venus Bot #{randomString}</span>
 			        </span>
 			      </div>
 			      <div className="input-field col s2">

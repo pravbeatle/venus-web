@@ -1,6 +1,7 @@
 const AssetsPlugin = require('assets-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -65,7 +66,8 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new ExtractTextPlugin('cssbundle.[name].[chunkhash].css')
+    new ExtractTextPlugin('cssbundle.[name].[chunkhash].css'),
+    new HtmlWebpackPlugin(),
     // new CopyWebpackPlugin([{ from: './src/images', to: './images' }])
   ],
 };
