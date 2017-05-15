@@ -67,7 +67,11 @@ module.exports = {
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new ExtractTextPlugin('cssbundle.[name].[chunkhash].css'),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'public/index.html',
+      file: 'index.html',
+      include: 'body',
+    }),
     // new CopyWebpackPlugin([{ from: './src/images', to: './images' }])
   ],
 };

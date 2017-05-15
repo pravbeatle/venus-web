@@ -12,7 +12,7 @@ app.use(compression());
 app.use(express.static(path.join(__dirname, 'build'), { maxAge: 2*60*60*1000 })); // caching for 2 hours
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'public/index.html'));
+  res.sendFile(path.join(__dirname, 'build/index.html'));
 });
 
 app.listen(process.env.PORT || port, () => {

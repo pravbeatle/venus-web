@@ -62,7 +62,11 @@ module.exports = {
     new AssetsPlugin({
       filename: 'build/assets.json'
     }),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'public/index.html',
+      file: 'index.html',
+      include: 'body',
+    }),
     // new CopyWebpackPlugin([{
     //   from: './src/images',
     //   to: './images'

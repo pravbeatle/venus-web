@@ -1,8 +1,8 @@
 import React from 'react';
-import { ChatInput } from '../components';
+import { ChatInput, ChatHistory } from '../components';
 import {connect} from 'react-redux';
 
-class App extends React.Component {
+class App extends React.PureComponent {
 	sendMessage = (message) => {
 		console.log(message);
 	}
@@ -10,6 +10,7 @@ class App extends React.Component {
 	render() {
 		return(
 			<div>
+				<ChatHistory history={[]} />
 				<ChatInput />
 			</div>
 		);
