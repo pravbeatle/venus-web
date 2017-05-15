@@ -1,4 +1,4 @@
-import {ADD_MESSAGE, SET_CURRENT_USERID, ADD_HISTORY} from '../config/actions';
+import {ADD_MESSAGE, SET_CURRENT_USERID, ADD_HISTORY} from '../actions';
 import {fromJS} from 'immutable';
 
 const INITIAL_STATE = fromJS({

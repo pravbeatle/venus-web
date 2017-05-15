@@ -8,4 +8,7 @@ import {rootReducer} from './reducers'
 import './styles/index.css'
 
 const store = createStore(rootReducer, window.devToolsExtension && window.devToolsExtension())
-render(<Provider store={store}><App /></Provider>, document.getElementById('root'))
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>, document.getElementById('root'))

@@ -61,10 +61,10 @@ module.exports = {
     new AssetsPlugin({
       filename: 'build/assets.json'
     }),
-    new CopyWebpackPlugin([{
-      from: './src/images',
-      to: './images'
-    }])
+    // new CopyWebpackPlugin([{
+    //   from: './src/images',
+    //   to: './images'
+    // }])
   ],
   resolve: {
     extensions: ['.js', '.json']
